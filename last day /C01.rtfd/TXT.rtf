@@ -1,0 +1,676 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fnil\fcharset0 Menlo-Bold;}
+{\colortbl;\red255\green255\blue255;\red93\green108\blue121;\red255\green255\blue255;\red0\green0\blue0;
+\red100\green56\blue32;\red196\green26\blue22;\red155\green35\blue147;\red15\green104\blue160;\red28\green0\blue207;
+}
+{\*\expandedcolortbl;;\csgenericrgb\c36526\c42188\c47515;\csgenericrgb\c100000\c100000\c100000;\csgenericrgb\c0\c0\c0\c85000;
+\csgenericrgb\c39147\c22031\c12446;\csgenericrgb\c77000\c10200\c8600;\csgenericrgb\c60759\c13753\c57628;\csgenericrgb\c5882\c40784\c62745;\csgenericrgb\c11000\c0\c81000;
+}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab593
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf2 \cb3 * ************************************************************************** */\cf4 \
+\cf2 /*                                                                            */\cf4 \
+\cf2 /*                                                        :::      ::::::::   */\cf4 \
+\cf2 /*   exExam.c                                           :+:      :+:    :+:   */\cf4 \
+\cf2 /*                                                    +:+ +:+         +:+     */\cf4 \
+\cf2 /*   By: fromano <marvin@42.fr>                     +#+  +:+       +#+        */\cf4 \
+\cf2 /*                                                +#+#+#+#+#+   +#+           */\cf4 \
+\cf2 /*   Created: 2022/02/13 10:44:03 by fromano           #+#    #+#             */\cf4 \
+\cf2 /*   Updated: 2022/02/13 18:38:11 by fromano          ###   ########.fr       */\cf4 \
+\cf2 /*                                                                            */\cf4 \
+\cf2 /* ************************************************************************** */\cf4 \
+\
+\cf5 #include \cf6 <unistd.h>\cf4 \
+\cf5 #include \cf6 <stdio.h>\cf4 \
+\
+
+\f1\b \cf7 void
+\f0\b0 \cf4   \cf8 reverse\cf4 (
+\f1\b \cf7 char
+\f0\b0 \cf4  *str)\
+\{\
+	
+\f1\b \cf7 int
+\f0\b0 \cf4  i;\
+	
+\f1\b \cf7 int
+\f0\b0 \cf4  size;\
+	
+\f1\b \cf7 char
+\f0\b0 \cf4  temp;\
+	\
+	i = \cf9 0\cf4 ;\
+	size = \cf9 0\cf4 ;\
+	
+\f1\b \cf7 while
+\f0\b0 \cf4  (str[i] != \cf9 '\\0'\cf4 )\
+	\{\
+		size++;\
+		i++;\
+	\}\
+	i = \cf9 0\cf4 ;\
+	
+\f1\b \cf7 while
+\f0\b0 \cf4  ( i < (size /\cf9 2\cf4 ))\
+	\{\
+		temp = str[i];\
+		str[i] = str[size - \cf9 1\cf4  - i];\
+		str[size - \cf9 1\cf4  - i] = temp;\
+		i++;\
+	\}\
+\}\
+\cf2 //int lungh(char c)\cf4 \
+\cf2 //\{\cf4 \
+\cf2 //	int i;\cf4 \
+\cf2 // 	i = 0;\cf4 \
+\cf2 // 	while (c[i] != '\\0')\cf4 \
+\cf2 //		i++;\cf4 \
+\cf2 //	return i;\cf4 \
+\cf2 //\}\cf4 \
+\
+
+\f1\b \cf7 int
+\f0\b0 \cf4  \cf8 main\cf4 ()\
+\{\
+	
+\f1\b \cf7 int
+\f0\b0 \cf4  i;\
+	\cf2 //int size;\cf4 \
+	
+\f1\b \cf7 char
+\f0\b0 \cf4  a[\cf9 10\cf4 ] = \cf6 "i cavalli"\cf4 ;\
+	
+\f1\b \cf7 char
+\f0\b0 \cf4  b[\cf9 12\cf4 ] = \cf6 "sono belli"\cf4 ;\
+\
+	i = \cf9 0\cf4 ;\
+	\cf2 //size = 10;\cf4 \
+	reverse(b);\
+	
+\f1\b \cf7 while
+\f0\b0 \cf4 (b[i] != \cf9 '\\0'\cf4 )\
+	\{\
+		write(\cf9 1\cf4 , &b[i], \cf9 1\cf4 );\
+	   i++;\
+	\}\
+	i = \cf9 0\cf4 ;\
+	reverse(a);\
+	\{\
+		write (\cf9 1\cf4 , \cf6 "\\n"\cf4 , \cf9 1\cf4 );\
+	\}\
+	
+\f1\b \cf7 while
+\f0\b0 \cf4 (a[i] != \cf9 '\\0'\cf4 )\
+	\{\
+		write(\cf9 1\cf4 , &a[i], \cf9 1\cf4 );\
+		i++;\
+	\}\
+\cf2 //	printf("%s", &a[i]);\cf4 \
+	
+\f1\b \cf7 return
+\f0\b0 \cf4  \cf9 0\cf4 ;\
+\}\
+\
+\
+\cf2 /* ************************************************************************** */\cf4 \
+\cf2 /*                                                                            */\cf4 \
+\cf2 /*                                                        :::      ::::::::   */\cf4 \
+\cf2 /*   ft_ft.c                                            :+:      :+:    :+:   */\cf4 \
+\cf2 /*                                                    +:+ +:+         +:+     */\cf4 \
+\cf2 /*   By: fromano <marvin@42.fr>                     +#+  +:+       +#+        */\cf4 \
+\cf2 /*                                                +#+#+#+#+#+   +#+           */\cf4 \
+\cf2 /*   Created: 2022/02/09 12:50:16 by fromano           #+#    #+#             */\cf4 \
+\cf2 /*   Updated: 2022/02/10 16:32:59 by fromano          ###   ########.fr       */\cf4 \
+\cf2 /*                                                                            */\cf4 \
+\cf2 /* ************************************************************************** */\cf4 \
+\
+\cf5 #include \cf6 <stdio.h>\cf4 \
+\
+
+\f1\b \cf7 void
+\f0\b0 \cf4 	\cf8 ft_ft\cf4 (
+\f1\b \cf7 int
+\f0\b0 \cf4  *nbr)\
+\{\
+	*nbr = \cf9 42\cf4 ;\
+\}\
+\
+\
+\cf5 #include \cf6 <stdio.h>\cf5  \cf2 /*solo se serve */\cf4 \
+\
+
+\f1\b \cf7 void
+\f0\b0 \cf4 	\cf8 ft_ft\cf4 (
+\f1\b \cf7 int
+\f0\b0 \cf4  *********nbr)\
+\{\
+	*********nbr  = \cf9 42\cf4 ;\
+		\}\
+\
+
+\f1\b \cf7 int
+\f0\b0 \cf4  \cf8 main\cf4 (
+\f1\b \cf7 void
+\f0\b0 \cf4 )\
+\{\
+	
+\f1\b \cf7 int
+\f0\b0 \cf4 	a;\
+	
+\f1\b \cf7 int
+\f0\b0 \cf4  *nb1;\
+    
+\f1\b \cf7 int
+\f0\b0 \cf4  **nb2;\
+    
+\f1\b \cf7 int
+\f0\b0 \cf4  ***nb3;\
+    
+\f1\b \cf7 int
+\f0\b0 \cf4  ****nb4;\
+    
+\f1\b \cf7 int
+\f0\b0 \cf4  *****nb5;\
+    
+\f1\b \cf7 int
+\f0\b0 \cf4  ******nb6;\
+    
+\f1\b \cf7 int
+\f0\b0 \cf4  *******nb7;\
+    
+\f1\b \cf7 int
+\f0\b0 \cf4  ********nb8;\
+    
+\f1\b \cf7 int
+\f0\b0 \cf4  *********nbr;\
+    \
+    nb1 = &a;\
+	nb2 = &nb1;\
+	nb3 = &nb2;\
+	nb4 = &nb3;\
+	nb5 = &nb4;\
+	nb6 = &nb5;\
+	nb7 = &nb6;\
+	nb8 = &nb7;\
+	nbr = &nb8;\
+	ft_ft(nbr);\
+	\
+    printf(\cf6 "%d"\cf4 , a);\
+	
+\f1\b \cf7 return
+\f0\b0 \cf4  \cf9 0\cf4 ;\
+\}\
+\
+\
+\cf2 /* ************************************************************************** */\cf4 \
+\cf2 /*                                                                            */\cf4 \
+\cf2 /*                                                        :::      ::::::::   */\cf4 \
+\cf2 /*   ft_swap.c                                          :+:      :+:    :+:   */\cf4 \
+\cf2 /*                                                    +:+ +:+         +:+     */\cf4 \
+\cf2 /*   By: fromano <marvin@42.fr>                     +#+  +:+       +#+        */\cf4 \
+\cf2 /*                                                +#+#+#+#+#+   +#+           */\cf4 \
+\cf2 /*   Created: 2022/02/09 16:37:06 by fromano           #+#    #+#             */\cf4 \
+\cf2 /*   Updated: 2022/02/09 17:07:34 by fromano          ###   ########.fr       */\cf4 \
+\cf2 /*                                                                            */\cf4 \
+\cf2 /* ************************************************************************** */\cf4 \
+\
+\cf5 #include \cf6 <unistd.h>\cf4 \
+\cf5 #include \cf6 <stdio.h>\cf4 \
+\
+
+\f1\b \cf7 void
+\f0\b0 \cf4  \cf8 ft_swap\cf4 (
+\f1\b \cf7 int
+\f0\b0 \cf4  *a, 
+\f1\b \cf7 int
+\f0\b0 \cf4  *b)\
+\{\
+	
+\f1\b \cf7 int
+\f0\b0 \cf4  c;\
+	c = *a;\
+	*a = *b;\
+	*b = c;\
+\}\
+
+\f1\b \cf7 int
+\f0\b0 \cf4  \cf8 main\cf4 (
+\f1\b \cf7 void
+\f0\b0 \cf4 )\
+\{\
+	
+\f1\b \cf7 int
+\f0\b0 \cf4  a;\
+	
+\f1\b \cf7 int
+\f0\b0 \cf4  b;\
+\
+	a = \cf9 42\cf4 ;\
+	b = \cf9 41\cf4 ;\
+\
+	ft_swap(&a, &b);\
+	printf(\cf6 "%d"\cf4 , a);\
+	printf(\cf6 "%d"\cf4 , b);\
+	
+\f1\b \cf7 return
+\f0\b0 \cf4  \cf9 0\cf4 ;\
+\}\
+\
+\
+\cf2 /* ************************************************************************** */\cf4 \
+\cf2 /*                                                                            */\cf4 \
+\cf2 /*                                                        :::      ::::::::   */\cf4 \
+\cf2 /*   ft_div_mod.c                                       :+:      :+:    :+:   */\cf4 \
+\cf2 /*                                                    +:+ +:+         +:+     */\cf4 \
+\cf2 /*   By: fromano <marvin@42.fr>                     +#+  +:+       +#+        */\cf4 \
+\cf2 /*                                                +#+#+#+#+#+   +#+           */\cf4 \
+\cf2 /*   Created: 2022/02/09 17:08:05 by fromano           #+#    #+#             */\cf4 \
+\cf2 /*   Updated: 2022/02/09 17:31:02 by fromano          ###   ########.fr       */\cf4 \
+\cf2 /*                                                                            */\cf4 \
+\cf2 /* ************************************************************************** */\cf4 \
+\
+\cf5 #include \cf6 <unistd.h>\cf4 \
+\cf5 #include \cf6 <stdio.h>\cf4 \
+\
+
+\f1\b \cf7 void
+\f0\b0 \cf4  \cf8 ft_div_mod\cf4 (
+\f1\b \cf7 int
+\f0\b0 \cf4  a, 
+\f1\b \cf7 int
+\f0\b0 \cf4  b, 
+\f1\b \cf7 int
+\f0\b0 \cf4  *div, 
+\f1\b \cf7 int
+\f0\b0 \cf4  *mod)\
+\{\
+	*div= (a/b);\
+	*mod= (a%b);\
+\}\
+\
+
+\f1\b \cf7 int
+\f0\b0 \cf4  \cf8 main\cf4 (
+\f1\b \cf7 void
+\f0\b0 \cf4 )\
+\{\
+	
+\f1\b \cf7 int
+\f0\b0 \cf4  a;\
+	
+\f1\b \cf7 int
+\f0\b0 \cf4  b;\
+	
+\f1\b \cf7 int
+\f0\b0 \cf4  c;\
+	
+\f1\b \cf7 int
+\f0\b0 \cf4  d;\
+	
+\f1\b \cf7 int
+\f0\b0 \cf4  *div;\
+	
+\f1\b \cf7 int
+\f0\b0 \cf4  *mod;\
+	\
+	a = \cf9 24\cf4 ;\
+	b = \cf9 4\cf4 ;\
+	div = &c;\
+	mod = &d;\
+\
+	ft_div_mod(a, b, div, mod);\
+	printf(\cf6 "%d"\cf4 , c);\
+	printf(\cf6 "%d"\cf4 , d);\
+	
+\f1\b \cf7 return
+\f0\b0 \cf4  \cf9 0\cf4 ;\
+\}\
+\
+\
+\cf2 /* ************************************************************************** */\cf4 \
+\cf2 /*                                                                            */\cf4 \
+\cf2 /*                                                        :::      ::::::::   */\cf4 \
+\cf2 /*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */\cf4 \
+\cf2 /*                                                    +:+ +:+         +:+     */\cf4 \
+\cf2 /*   By: fromano <marvin@42.fr>                     +#+  +:+       +#+        */\cf4 \
+\cf2 /*                                                +#+#+#+#+#+   +#+           */\cf4 \
+\cf2 /*   Created: 2022/02/09 18:11:08 by fromano           #+#    #+#             */\cf4 \
+\cf2 /*   Updated: 2022/02/09 19:45:06 by fromano          ###   ########.fr       */\cf4 \
+\cf2 /*                                                                            */\cf4 \
+\cf2 /* ************************************************************************** */\cf4 \
+\
+\cf5 #include \cf6 <stdio.h>\cf4 \
+\cf5 #include \cf6 <unistd.h>\cf4 \
+\
+
+\f1\b \cf7 void
+\f0\b0 \cf4  \cf8 ft_ultimate_div_mod\cf4 (
+\f1\b \cf7 int
+\f0\b0 \cf4  *a, 
+\f1\b \cf7 int
+\f0\b0 \cf4  *b)\
+\{\
+	
+\f1\b \cf7 int
+\f0\b0 \cf4  c;\
+	
+\f1\b \cf7 int
+\f0\b0 \cf4  d;\
+\
+	c = *a / *b;\
+	d = *a % *b;\
+	*a = c;\
+	*b = d;	\
+\}\
+\
+
+\f1\b \cf7 int
+\f0\b0 \cf4  \cf8 main\cf4 (
+\f1\b \cf7 void
+\f0\b0 \cf4 )\
+\{\
+	
+\f1\b \cf7 int
+\f0\b0 \cf4  c;\
+	
+\f1\b \cf7 int
+\f0\b0 \cf4  d;\
+	
+\f1\b \cf7 int
+\f0\b0 \cf4  *a;\
+	
+\f1\b \cf7 int
+\f0\b0 \cf4  *b;\
+\
+	c = \cf9 24\cf4 ;\
+	a = &c;\
+	d = \cf9 6\cf4 ;\
+	b = &d;\
+	\
+	ft_ultimate_div_mod(a, b);\
+	printf(\cf6 "%d"\cf4 , c);\
+	printf(\cf6 "%d"\cf4 , d);\
+	
+\f1\b \cf7 return
+\f0\b0 \cf4  \cf9 0\cf4 ;\
+\}\
+\
+\
+\cf5 #include \cf6 <unistd.h>\cf4 \
+\cf5 #include \cf6 <stdio.h>\cf4 \
+\
+
+\f1\b \cf7 void
+\f0\b0 \cf4  \cf8 stampa\cf4 (
+\f1\b \cf7 char
+\f0\b0 \cf4  c)\
+\{\
+	write(\cf9 1\cf4 , &c,\cf9 1\cf4 );\
+\}\
+
+\f1\b \cf7 void
+\f0\b0 \cf4  \cf8 ft_putstr\cf4 (
+\f1\b \cf7 char
+\f0\b0 \cf4  *str)\
+\{\
+	
+\f1\b \cf7 int
+\f0\b0 \cf4  i;\
+	\
+	i = \cf9 0\cf4 ;\
+		
+\f1\b \cf7 while
+\f0\b0 \cf4  (str[i] != \cf9 '\\0'\cf4 )\
+		\{\
+            stampa(str[i]);\
+			i++;\
+		\}\
+		write(\cf9 1\cf4 , \cf6 "\\n"\cf4 , \cf9 1\cf4 );\
+\}\
+
+\f1\b \cf7 void
+\f0\b0 \cf4  \cf8 ft_insstr\cf4 (
+\f1\b \cf7 char
+\f0\b0 \cf4  *str)\
+\{\
+		
+\f1\b \cf7 while
+\f0\b0 \cf4  (*str != \cf9 '\\0'\cf4 )\
+		\{\
+			stampa(*str);\
+			str++;\
+		\} \
+	write(\cf9 1\cf4 , \cf6 "\\n"\cf4 , \cf9 1\cf4 );\
+\}\
+
+\f1\b \cf7 int
+\f0\b0 \cf4  \cf8 main\cf4 (
+\f1\b \cf7 void
+\f0\b0 \cf4 )\
+\{\
+	
+\f1\b \cf7 char
+\f0\b0 \cf4  str[\cf9 5\cf4 ] = \cf6 "ciao"\cf4 ;\
+	\
+	ft_putstr(str);\
+	ft_insstr(str);\
+	printf(\cf6 "\\n%s\\n"\cf4 , str);\
+	
+\f1\b \cf7 return
+\f0\b0 \cf4  \cf9 0\cf4 ;\
+\}\
+\
+\
+\cf5 #include \cf6 <stdio.h>\cf4 \
+\
+
+\f1\b \cf7 int
+\f0\b0 \cf4 	\cf8 ft_strlen\cf4 (
+\f1\b \cf7 char
+\f0\b0 \cf4  *str)\
+\{\
+	
+\f1\b \cf7 int
+\f0\b0 \cf4  i;\
+\
+	i = \cf9 0\cf4 ;\
+	
+\f1\b \cf7 while
+\f0\b0 \cf4  (str[i] != \cf9 '\\0'\cf4 )\
+		i++;\
+	
+\f1\b \cf7 return
+\f0\b0 \cf4  (i);\
+\}\
+\
+\cf2 /*void ft_lunghstringa(char *str)\cf4 \
+\cf2 \{\cf4 \
+\cf2 	 while (*str != '\\0')\cf4 \
+\cf2 		 str++;\cf4 \
+\cf2 	 if (*str != '\\0')\cf4 \
+\cf2 		 print\cf4 \
+\cf2 */\cf4 \
+
+\f1\b \cf7 int
+\f0\b0 \cf4  \cf8 main\cf4 ()\
+\{\
+	
+\f1\b \cf7 char
+\f0\b0 \cf4  str[\cf9 5\cf4 ]= \cf6 "ciao"\cf4 ;\
+	\
+	printf(\cf6 "%d"\cf4 ,ft_strlen(str));\
+	
+\f1\b \cf7 return
+\f0\b0 \cf4  \cf9 0\cf4 ;\
+\}\
+\
+\
+\
+Stampa pi\'f9\'92 numeri con write\
+\
+\cf5 #include \cf6 <unistd.h>\cf4 \
+\cf5 #include \cf6 <stdio.h>\cf4 \
+\
+
+\f1\b \cf7 void
+\f0\b0 \cf4  \cf8 print\cf4 (
+\f1\b \cf7 char
+\f0\b0 \cf4  c)\
+\{\
+	write(\cf9 1\cf4 , &c, \cf9 1\cf4 );\
+\}\
+\
+
+\f1\b \cf7 void
+\f0\b0 \cf4  \cf8 punt\cf4 (
+\f1\b \cf7 int
+\f0\b0 \cf4  ****nbr4)\
+\{\
+	****nbr4 =\cf9 424\cf4 ;\
+\}\
+\
+
+\f1\b \cf7 void
+\f0\b0 \cf4  \cf8 stampaPiuNumeri\cf4 (
+\f1\b \cf7 int
+\f0\b0 \cf4   x)\
+\{	\
+		
+\f1\b \cf7 if
+\f0\b0 \cf4  (x == -\cf9 2147483648\cf4 )\
+	\{\
+		print(\cf9 '-'\cf4 );\
+		print(\cf9 '2'\cf4 );\
+		x = \cf9 14783648\cf4 ;\
+	\}\
+		
+\f1\b \cf7 if
+\f0\b0 \cf4  (x < \cf9 0\cf4 )\
+	\{\
+		print(\cf9 '-'\cf4 );\
+		x*=-\cf9 1\cf4 ;\
+	\}\
+		
+\f1\b \cf7 if
+\f0\b0 \cf4  (x >= \cf9 10\cf4 )\
+			stampaPiuNumeri(x / \cf9 10\cf4 );\
+		print((x % \cf9 10\cf4 ) + \cf9 48\cf4 );\
+\}\
+\
+
+\f1\b \cf7 int
+\f0\b0 \cf4  \cf8 main\cf4 (
+\f1\b \cf7 void
+\f0\b0 \cf4 )\
+\{\
+	
+\f1\b \cf7 int
+\f0\b0 \cf4 	a;\
+	
+\f1\b \cf7 int
+\f0\b0 \cf4  ****nbr4;\
+	
+\f1\b \cf7 int
+\f0\b0 \cf4  ***nbr3;\
+	
+\f1\b \cf7 int
+\f0\b0 \cf4  **nbr2;\
+	
+\f1\b \cf7 int
+\f0\b0 \cf4  *nbr;\
+	\
+	nbr = &a;\
+	nbr2 = &nbr;\
+	nbr3 = &nbr2;\
+	nbr4 = &nbr3;\
+\
+	punt(nbr4);	\
+	printf(\cf6 "il numero e:%d\\n"\cf4 , a);\
+	stampaPiuNumeri(a);\
+	
+\f1\b \cf7 return
+\f0\b0 \cf4  \cf9 0\cf4 ;\
+\}\
+\
+\
+\
+\cf2 /* ************************************************************************** */\cf4 \
+\cf2 /*                                                                            */\cf4 \
+\cf2 /*                                                        :::      ::::::::   */\cf4 \
+\cf2 /*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */\cf4 \
+\cf2 /*                                                    +:+ +:+         +:+     */\cf4 \
+\cf2 /*   By: fromano <marvin@42.fr>                     +#+  +:+       +#+        */\cf4 \
+\cf2 /*                                                +#+#+#+#+#+   +#+           */\cf4 \
+\cf2 /*   Created: 2022/02/12 18:15:50 by fromano           #+#    #+#             */\cf4 \
+\cf2 /*   Updated: 2022/02/13 10:42:43 by fromano          ###   ########.fr       */\cf4 \
+\cf2 /*                                                                            */\cf4 \
+\cf2 /* ************************************************************************** */\cf4 \
+\
+\cf5 #include \cf6 <unistd.h>\cf4 \
+\cf5 #include \cf6 <stdio.h>\cf4 \
+\
+\
+
+\f1\b \cf7 void
+\f0\b0 \cf4  \cf8 ft_rev_int_tab\cf4 (
+\f1\b \cf7 int
+\f0\b0 \cf4  *tab, 
+\f1\b \cf7 int
+\f0\b0 \cf4  size)\
+\{\
+	
+\f1\b \cf7 int
+\f0\b0 \cf4  i;\
+	
+\f1\b \cf7 int
+\f0\b0 \cf4  temp;\
+\
+	i = \cf9 0\cf4 ;\
+	
+\f1\b \cf7 while
+\f0\b0 \cf4  ( i < (size) / \cf9 2\cf4  )\
+	\{\
+		temp = tab[i];\
+		tab[i] = tab[size - \cf9 1\cf4   - i];\
+		tab[size - \cf9 1\cf4  - i] = temp;\
+		i++;\
+	\}\
+\}\
+\
+
+\f1\b \cf7 int
+\f0\b0 \cf4  \cf8 main\cf4 ()\
+\{\
+	
+\f1\b \cf7 int
+\f0\b0 \cf4  tab[\cf9 5\cf4 ] = \{\cf9 1\cf4 , \cf9 2\cf4 , \cf9 3\cf4 , \cf9 4\cf4 , \cf9 5\cf4 \};\
+	
+\f1\b \cf7 int
+\f0\b0 \cf4  size;\
+	
+\f1\b \cf7 int
+\f0\b0 \cf4  i;	\
+	size = \cf9 5\cf4 ;\
+	\
+	ft_rev_int_tab(tab, size);\
+	printf(\cf6 "%d"\cf4 , tab[\cf9 0\cf4 ]);\
+    printf(\cf6 "%d"\cf4 , tab[\cf9 1\cf4 ]);\
+    printf(\cf6 "%d"\cf4 , tab[\cf9 2\cf4 ]);\
+    printf(\cf6 "%d"\cf4 , tab[\cf9 3\cf4 ]);\
+    printf(\cf6 "%d\\n"\cf4 , tab[\cf9 4\cf4 ]);\
+	\
+	i = \cf9 0\cf4 ;\
+	
+\f1\b \cf7 while
+\f0\b0 \cf4  (i <=size -\cf9 1\cf4 )\
+	\{\
+		printf(\cf6 "%d"\cf4 , tab[i]);\
+		i++;\
+	\}\
+	
+\f1\b \cf7 return
+\f0\b0 \cf4  (\cf9 0\cf4 );\
+\}	\
+}

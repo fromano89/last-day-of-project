@@ -1,0 +1,429 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fnil\fcharset0 Menlo-Bold;}
+{\colortbl;\red255\green255\blue255;\red93\green108\blue121;\red255\green255\blue255;\red0\green0\blue0;
+\red100\green56\blue32;\red196\green26\blue22;\red155\green35\blue147;\red15\green104\blue160;\red28\green0\blue207;
+}
+{\*\expandedcolortbl;;\csgenericrgb\c36526\c42188\c47515;\csgenericrgb\c100000\c100000\c100000;\csgenericrgb\c0\c0\c0\c85000;
+\csgenericrgb\c39147\c22031\c12446;\csgenericrgb\c77000\c10200\c8600;\csgenericrgb\c60759\c13753\c57628;\csgenericrgb\c5882\c40784\c62745;\csgenericrgb\c11000\c0\c81000;
+}
+\margl1440\margr1440\vieww18160\viewh8400\viewkind0
+\deftab593
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf2 \cb3 /* ************************************************************************** */\cf4 \
+\cf2 /*                                                                            */\cf4 \
+\cf2 /*                                                        :::      ::::::::   */\cf4 \
+\cf2 /*   f.c                                                :+:      :+:    :+:   */\cf4 \
+\cf2 /*                                                    +:+ +:+         +:+     */\cf4 \
+\cf2 /*   By: fromano <marvin@42.fr>                     +#+  +:+       +#+        */\cf4 \
+\cf2 /*                                                +#+#+#+#+#+   +#+           */\cf4 \
+\cf2 /*   Created: 2022/02/05 11:25:33 by fromano           #+#    #+#             */\cf4 \
+\cf2 /*   Updated: 2022/02/11 11:02:26 by fromano          ###   ########.fr       */\cf4 \
+\cf2 /*                                                                            */\cf4 \
+\cf2 /* ************************************************************************** */\cf4 \
+\
+\cf5 #include \cf6 <unistd.h>\cf4 \
+\
+
+\f1\b \cf7 void
+\f0\b0 \cf4 	\cf8 francesco\cf4 (
+\f1\b \cf7 char
+\f0\b0 \cf4  f)\
+\{\
+	write(\cf9 1\cf4 , \cf6 "ciao a tutti"\cf4 , \cf9 12\cf4 );\
+\}\
+
+\f1\b \cf7 int
+\f0\b0 \cf4  \cf8 main\cf4 (
+\f1\b \cf7 void
+\f0\b0 \cf4 )\
+\{\
+	
+\f1\b \cf7 char
+\f0\b0 \cf4  h;\
+	francesco (h);	\
+\}\
+\
+\cf2 /* ************************************************************************** */\cf4 \
+\cf2 /*                                                                            */\cf4 \
+\cf2 /*                                                        :::      ::::::::   */\cf4 \
+\cf2 /*   g.c                                                :+:      :+:    :+:   */\cf4 \
+\cf2 /*                                                    +:+ +:+         +:+     */\cf4 \
+\cf2 /*   By: fromano <marvin@42.fr>                     +#+  +:+       +#+        */\cf4 \
+\cf2 /*                                                +#+#+#+#+#+   +#+           */\cf4 \
+\cf2 /*   Created: 2022/02/03 20:02:20 by fromano           #+#    #+#             */\cf4 \
+\cf2 /*   Updated: 2022/02/05 11:44:46 by fromano          ###   ########.fr       */\cf4 \
+\cf2 /*                                                                            */\cf4 \
+\cf2 /* ************************************************************************** */\cf4 \
+\
+\cf5 #include \cf6 <unistd.h>\cf4 \
+\
+
+\f1\b \cf7 void
+\f0\b0 \cf4 	\cf8 g\cf4 (
+\f1\b \cf7 char
+\f0\b0 \cf4  d)\
+	\{	\
+	write(\cf9 1\cf4 , &d, \cf9 1\cf4 );\
+	\}\
+
+\f1\b \cf7 int
+\f0\b0 \cf4  \cf8 main\cf4 (
+\f1\b \cf7 void
+\f0\b0 \cf4 )\
+	\{	\
+	
+\f1\b \cf7 char
+\f0\b0 \cf4 	a; \
+	   a = \cf9 'd'\cf4 ;\
+		 g (a);\
+	\}\
+\
+\
+\cf2 /* ************************************************************************** */\cf4 \
+\cf2 /*                                                                            */\cf4 \
+\cf2 /*                                                        :::      ::::::::   */\cf4 \
+\cf2 /*   ft_print_alphabet.c                                :+:      :+:    :+:   */\cf4 \
+\cf2 /*                                                    +:+ +:+         +:+     */\cf4 \
+\cf2 /*   By: fromano <marvin@42.fr>                     +#+  +:+       +#+        */\cf4 \
+\cf2 /*                                                +#+#+#+#+#+   +#+           */\cf4 \
+\cf2 /*   Created: 2022/02/05 12:21:55 by fromano           #+#    #+#             */\cf4 \
+\cf2 /*   Updated: 2022/02/05 13:17:38 by fromano          ###   ########.fr       */\cf4 \
+\cf2 /*                                                                            */\cf4 \
+\cf2 /* ************************************************************************** */\cf4 \
+\cf2 /* librerie: unistd.h , stdio.h */\cf4 \
+\
+\cf2 /*D = dichiarazione\cf4 \
+\cf2  *A = assegnazione*/\cf4 \
+\
+\cf5 #include \cf6 <unistd.h>\cf4 \
+\cf2 /* D - non necessaria  risposta 'Void' delle f(x)(CHARCTER C)*/\cf4 \
+
+\f1\b \cf7 void
+\f0\b0 \cf4  \cf8 ft_print_alphabet\cf4 (
+\f1\b \cf7 char
+\f0\b0 \cf4  c)\
+\cf2 /*SCRIVI COMANDO (input, &(indirizzo di CHARACTER)output, byte sing richiesta);*/\cf4  \
+	\{	\
+	write(\cf9 1\cf4 , &c, \cf9 1\cf4 );\
+	\}\
+\cf2 /*D variabile - A f(x)*/\cf4 \
+
+\f1\b \cf7 int
+\f0\b0 \cf4  \cf8 main\cf4 ()\
+	\{
+\f1\b \cf7 int
+\f0\b0 \cf4 	i;\cf2 /* dichiaro i(var) - spazio memoria dedicato*/\cf4 \
+	i = \cf9 'a'\cf4 ;  \cf2 /* assegno valore a - (var) spazio di memoria riempito */\cf4 \
+	
+\f1\b \cf7 while
+\f0\b0 \cf4  (i <= \cf9 122\cf4 )\cf2 /* condizione/mentre (se e'vero)*/\cf4  \
+	\{ft_print_alphabet(i); \cf2 /*assegno (var) a f(x)*/\cf4 \
+	i++;\}\cf2 /*incremento*/\cf4 \
+	\}\
+\
+\
+\
+\cf5 #include \cf6 <unistd.h>\cf4 \
+\
+
+\f1\b \cf7 void
+\f0\b0 \cf4  \cf8 prova_alphabet\cf4 (
+\f1\b \cf7 char
+\f0\b0 \cf4  c)\
+	\{\
+	write(\cf9 1\cf4 , &c, \cf9 1\cf4 );\
+	\}\
+
+\f1\b \cf7 int
+\f0\b0 \cf4  \cf8 main\cf4 ()\
+\{ \
+	
+\f1\b \cf7 int
+\f0\b0 \cf4  i;\
+  		\
+	i = \cf9 97\cf4 ;\
+	
+\f1\b \cf7 while
+\f0\b0 \cf4  (i <= \cf9 122\cf4 )\
+	\{\
+		prova_alphabet(i);\
+		i++;\
+	\}\
+\}\
+\
+\
+\
+\cf5 #include \cf6 <unistd.h>\cf4 \
+\
+
+\f1\b \cf7 void
+\f0\b0 \cf4  \cf8 alcontrario\cf4 (
+\f1\b \cf7 char
+\f0\b0 \cf4  c)\
+\{\
+	write(\cf9 1\cf4 , &c, \cf9 1\cf4 );\
+\}\
+
+\f1\b \cf7 int
+\f0\b0 \cf4  \cf8 main\cf4 ()\
+\{	\
+	
+\f1\b \cf7 char
+\f0\b0 \cf4  i;\
+\
+	i = \cf9 'z'\cf4 ;\
+	
+\f1\b \cf7 while
+\f0\b0 \cf4  (i >= \cf9 'a'\cf4 )\
+	\{ \
+		alcontrario(i);\
+		i--;\
+	\}\
+\}	\
+\
+\
+\cf5 #include \cf6 <unistd.h>\cf4 \
+\
+
+\f1\b \cf7 void
+\f0\b0 \cf4  \cf8 funz\cf4 (
+\f1\b \cf7 char
+\f0\b0 \cf4  n)\
+\{\
+   	write (\cf9 1\cf4 , &n, \cf9 1\cf4 );\
+\}\
+\
+
+\f1\b \cf7 int
+\f0\b0 \cf4  \cf8 main\cf4 ()\
+\{\
+	
+\f1\b \cf7 char
+\f0\b0 \cf4   i;\
+	i = \cf9 48\cf4 ;\
+	
+\f1\b \cf7 while
+\f0\b0 \cf4  (i <= \cf9 57\cf4 )\
+	\{\
+		funz(i);\
+		i++;\
+	\}\
+\}\
+\
+\cf5 #include \cf6 <unistd.h>\cf4 \
+\
+
+\f1\b \cf7 void
+\f0\b0 \cf4 	 \cf8 senegativa\cf4 (
+\f1\b \cf7 int
+\f0\b0 \cf4  n)\
+\{\
+	
+\f1\b \cf7 if
+\f0\b0 \cf4  (n < \cf9 0\cf4 )\
+		write(\cf9 1\cf4 , \cf6 "N"\cf4 , \cf9 1\cf4 );\
+	
+\f1\b \cf7 else
+\f0\b0 \cf4 \
+		write(\cf9 1\cf4 , \cf6 "P"\cf4 , \cf9 1\cf4 );\
+\}\
+\
+
+\f1\b \cf7 int
+\f0\b0 \cf4  \cf8 main\cf4 () \
+\{\
+	senegativa(\cf9 1\cf4 );\
+	
+\f1\b \cf7 return
+\f0\b0 \cf4  (\cf9 0\cf4 );\
+\}\
+\
+\
+\
+\
+\
+\cf5 #include \cf6 <unistd.h>\cf4 \
+\
+
+\f1\b \cf7 void
+\f0\b0 \cf4 	\cf8 ft_print_comb\cf4 (
+\f1\b \cf7 void
+\f0\b0 \cf4 )\
+\{\
+	
+\f1\b \cf7 int
+\f0\b0 \cf4  x;\
+	
+\f1\b \cf7 int
+\f0\b0 \cf4  y;\
+	
+\f1\b \cf7 int
+\f0\b0 \cf4  z;\
+\
+	x = \cf9 48\cf4 ;\
+	 \
+	
+\f1\b \cf7 while
+\f0\b0 \cf4 ( x <= \cf9 55\cf4 )\
+	\{\
+		y = x + \cf9 1\cf4  ;\
+		
+\f1\b \cf7 while
+\f0\b0 \cf4 ( y <= \cf9 56\cf4  ) \
+		\{ \
+			z = y + \cf9 1\cf4 ;\
+\
+			
+\f1\b \cf7 while
+\f0\b0 \cf4 ( z <= \cf9 57\cf4  ) 	   \
+			\{\
+				write(\cf9 1\cf4 , &x, \cf9 1\cf4 );\
+				write(\cf9 1\cf4 , &y, \cf9 1\cf4 );\
+				write(\cf9 1\cf4 , &z, \cf9 1\cf4 );\
+				z++;\
+			\}\
+		y++;\
+		\}\
+	x++;\
+	\}\
+\}\
+
+\f1\b \cf7 int
+\f0\b0 \cf4  \cf8 main\cf4 (
+\f1\b \cf7 void
+\f0\b0 \cf4 )\
+\
+\{\
+	ft_print_comb();\
+	
+\f1\b \cf7 return
+\f0\b0 \cf4  \cf9 0\cf4 ;\
+\}\
+\
+\
+\
+\
+\cf5 #include \cf6 <unistd.h>\cf4 \
+
+\f1\b \cf7 void
+\f0\b0 \cf4  \cf8 ft_putchar\cf4 (
+\f1\b \cf7 char
+\f0\b0 \cf4  c)\
+\{\
+	write(\cf9 1\cf4 , &c, \cf9 1\cf4 );\
+\}\
+
+\f1\b \cf7 void
+\f0\b0 \cf4  \cf8 ft_print_comb2\cf4 (
+\f1\b \cf7 void
+\f0\b0 \cf4 )\
+\{\
+	
+\f1\b \cf7 char
+\f0\b0 \cf4 	a;\
+	
+\f1\b \cf7 char
+\f0\b0 \cf4 	b;\
+	\
+	a = -\cf9 1\cf4 ;\
+\
+	
+\f1\b \cf7 while
+\f0\b0 \cf4  (a++ < \cf9 99\cf4 )\
+	\{\
+		b = a;\
+		
+\f1\b \cf7 while
+\f0\b0 \cf4  (b++ < \cf9 99\cf4 )\
+		\{\
+			ft_putchar( \cf9 '0'\cf4  + ( a / \cf9 10\cf4  ));\
+			ft_putchar( \cf9 '0'\cf4  + ( a % \cf9 10\cf4  ));\
+			ft_putchar( \cf9 ' '\cf4  ); \
+			ft_putchar( \cf9 '0'\cf4  + ( b / \cf9 10\cf4  ));\
+			ft_putchar( \cf9 '0'\cf4  + ( b % \cf9 10\cf4  ));\
+			
+\f1\b \cf7 if
+\f0\b0 \cf4  (a != \cf9 98\cf4 )\
+			\{	\
+				ft_putchar( \cf9 ','\cf4  );\
+				ft_putchar( \cf9 ' '\cf4  );\
+			\}\
+		\}	\
+	\}\
+\}\
+
+\f1\b \cf7 int
+\f0\b0 \cf4  \cf8 main\cf4 (
+\f1\b \cf7 void
+\f0\b0 \cf4 ) \
+\{\
+	ft_print_comb2();\
+	
+\f1\b \cf7 return
+\f0\b0 \cf4  \cf9 0\cf4 ;\
+\}\
+\
+\
+\cf5 #include \cf6 <unistd.h>\cf4 \
+\
+
+\f1\b \cf7 void
+\f0\b0 \cf4     \cf8 ft_putchar\cf4 (
+\f1\b \cf7 char
+\f0\b0 \cf4  c)\
+\{\
+    write(\cf9 1\cf4 , &c, \cf9 1\cf4 );\
+\}\
+\
+
+\f1\b \cf7 void
+\f0\b0 \cf4     \cf8 ft_putnbr\cf4 (
+\f1\b \cf7 int
+\f0\b0 \cf4  nb)\
+\{\
+    
+\f1\b \cf7 if
+\f0\b0 \cf4  (nb == -\cf9 2147483648\cf4 )\
+    \{\
+        ft_putchar(\cf9 '-'\cf4 );\
+        ft_putchar(\cf9 '2'\cf4 );\
+        nb = \cf9 147483648\cf4 ;\
+    \}\
+    
+\f1\b \cf7 if
+\f0\b0 \cf4  (nb < \cf9 0\cf4 )\
+    \{\
+        ft_putchar(\cf9 '-'\cf4 );\
+        nb *= -\cf9 1\cf4 ;\
+    \}\
+    
+\f1\b \cf7 if
+\f0\b0 \cf4  (nb >= \cf9 10\cf4 )\
+    \{\
+        ft_putnbr(nb / \cf9 10\cf4 );\
+        ft_putnbr(nb % \cf9 10\cf4 );\
+    \}\
+    
+\f1\b \cf7 else
+\f0\b0 \cf4 \
+    \{\
+        ft_putchar(nb + \cf9 48\cf4 );\
+    \}\
+\}\
+\
+
+\f1\b \cf7 int
+\f0\b0 \cf4         \cf8 main\cf4 (
+\f1\b \cf7 void
+\f0\b0 \cf4 )\
+\{\
+	ft_putnbr(\cf9 42\cf4 );\
+		
+\f1\b \cf7 return
+\f0\b0 \cf4  \cf9 0\cf4 ;\
+\}\
+\
+\
+\
+}
